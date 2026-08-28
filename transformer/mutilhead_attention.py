@@ -21,7 +21,7 @@ class MultiHeadAttention(nn.Module):
 
         self.w_o = nn.Linear(d_model, d_model)
 
-    def forward(self, x):
+    def forward(self, x, mask = None):
         batch_size, seq_len, d_model = x.shape
         #projection
         Q = self.w_q(x)
@@ -34,7 +34,12 @@ class MultiHeadAttention(nn.Module):
         V = V.view(batch_size, seq_len, self.num_heads, self.d_k).transpose(1, 2)
 
         #atten_score Q@K^T
+        #[batch_size, self.num_heads, seq_len, seq_len]
         atten_score  = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(self.d_k)
+
+        if mask is not None:
+            atten_score = atten_score.masked_fill(mask, 1e-9)
+
         #soft_max
         atten_weight = torch.softmax(atten_score, -1)
         #output
@@ -44,6 +49,9 @@ class MultiHeadAttention(nn.Module):
         out = self.w_o(out)
 
         return out, atten_weight
+
+
+
 
 # if __name__ == "__main__":
 #     d_model = 16
