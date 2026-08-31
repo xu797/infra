@@ -11,7 +11,7 @@ int main() {
     printf("Launching kernel...\n");
 
     // <<<2, 4>>> 表示启动 2 个 Block，每个 Block 有 4 个线程
-    helloKernel<<<2, 4>>>();
+    helloKernel<<<2, 100>>>();
 
     // 等待 GPU 上所有操作完成
     cudaDeviceSynchronize();
