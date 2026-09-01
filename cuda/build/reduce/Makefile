@@ -117,42 +117,80 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-reduce/CMakeFiles/reduce.dir/rule:
-	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce.dir/rule
-.PHONY : reduce/CMakeFiles/reduce.dir/rule
+reduce/CMakeFiles/reduce_shared_memory.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_shared_memory.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/rule
 
 # Convenience name for target.
-reduce: reduce/CMakeFiles/reduce.dir/rule
-.PHONY : reduce
+reduce_shared_memory: reduce/CMakeFiles/reduce_shared_memory.dir/rule
+.PHONY : reduce_shared_memory
 
 # fast build rule for target.
-reduce/fast:
-	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/build
-.PHONY : reduce/fast
+reduce_shared_memory/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
+.PHONY : reduce_shared_memory/fast
 
-reduce.o: reduce.cu.o
-.PHONY : reduce.o
+# Convenience name for target.
+reduce/CMakeFiles/reduce_warp_divergence.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_warp_divergence.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/rule
+
+# Convenience name for target.
+reduce_warp_divergence: reduce/CMakeFiles/reduce_warp_divergence.dir/rule
+.PHONY : reduce_warp_divergence
+
+# fast build rule for target.
+reduce_warp_divergence/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
+.PHONY : reduce_warp_divergence/fast
+
+reduce_shared_memory.o: reduce_shared_memory.cu.o
+.PHONY : reduce_shared_memory.o
 
 # target to build an object file
-reduce.cu.o:
-	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/reduce.cu.o
-.PHONY : reduce.cu.o
+reduce_shared_memory.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/reduce_shared_memory.cu.o
+.PHONY : reduce_shared_memory.cu.o
 
-reduce.i: reduce.cu.i
-.PHONY : reduce.i
+reduce_shared_memory.i: reduce_shared_memory.cu.i
+.PHONY : reduce_shared_memory.i
 
 # target to preprocess a source file
-reduce.cu.i:
-	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/reduce.cu.i
-.PHONY : reduce.cu.i
+reduce_shared_memory.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/reduce_shared_memory.cu.i
+.PHONY : reduce_shared_memory.cu.i
 
-reduce.s: reduce.cu.s
-.PHONY : reduce.s
+reduce_shared_memory.s: reduce_shared_memory.cu.s
+.PHONY : reduce_shared_memory.s
 
 # target to generate assembly for a file
-reduce.cu.s:
-	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/reduce.cu.s
-.PHONY : reduce.cu.s
+reduce_shared_memory.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/reduce_shared_memory.cu.s
+.PHONY : reduce_shared_memory.cu.s
+
+reduce_warp_divergence.o: reduce_warp_divergence.cu.o
+.PHONY : reduce_warp_divergence.o
+
+# target to build an object file
+reduce_warp_divergence.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/reduce_warp_divergence.cu.o
+.PHONY : reduce_warp_divergence.cu.o
+
+reduce_warp_divergence.i: reduce_warp_divergence.cu.i
+.PHONY : reduce_warp_divergence.i
+
+# target to preprocess a source file
+reduce_warp_divergence.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/reduce_warp_divergence.cu.i
+.PHONY : reduce_warp_divergence.cu.i
+
+reduce_warp_divergence.s: reduce_warp_divergence.cu.s
+.PHONY : reduce_warp_divergence.s
+
+# target to generate assembly for a file
+reduce_warp_divergence.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/reduce_warp_divergence.cu.s
+.PHONY : reduce_warp_divergence.cu.s
 
 # Help Target
 help:
@@ -162,10 +200,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... reduce"
-	@echo "... reduce.o"
-	@echo "... reduce.i"
-	@echo "... reduce.s"
+	@echo "... reduce_shared_memory"
+	@echo "... reduce_warp_divergence"
+	@echo "... reduce_shared_memory.o"
+	@echo "... reduce_shared_memory.i"
+	@echo "... reduce_shared_memory.s"
+	@echo "... reduce_warp_divergence.o"
+	@echo "... reduce_warp_divergence.i"
+	@echo "... reduce_warp_divergence.s"
 .PHONY : help
 
 

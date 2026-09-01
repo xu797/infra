@@ -117,17 +117,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named reduce
+# Target rules for targets named reduce_shared_memory
 
 # Build rule for target.
-reduce: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce
-.PHONY : reduce
+reduce_shared_memory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_shared_memory
+.PHONY : reduce_shared_memory
 
 # fast build rule for target.
-reduce/fast:
-	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/build
-.PHONY : reduce/fast
+reduce_shared_memory/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
+.PHONY : reduce_shared_memory/fast
+
+#=============================================================================
+# Target rules for targets named reduce_warp_divergence
+
+# Build rule for target.
+reduce_warp_divergence: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_warp_divergence
+.PHONY : reduce_warp_divergence
+
+# fast build rule for target.
+reduce_warp_divergence/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
+.PHONY : reduce_warp_divergence/fast
 
 # Help Target
 help:
@@ -137,7 +150,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... reduce"
+	@echo "... reduce_shared_memory"
+	@echo "... reduce_warp_divergence"
 .PHONY : help
 
 

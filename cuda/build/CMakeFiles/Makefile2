@@ -78,7 +78,8 @@ clean: reduce/clean
 # Directory level rules for directory reduce
 
 # Recursive "all" directory target.
-reduce/all: reduce/CMakeFiles/reduce.dir/all
+reduce/all: reduce/CMakeFiles/reduce_shared_memory.dir/all
+reduce/all: reduce/CMakeFiles/reduce_warp_divergence.dir/all
 .PHONY : reduce/all
 
 # Recursive "preinstall" directory target.
@@ -86,34 +87,61 @@ reduce/preinstall:
 .PHONY : reduce/preinstall
 
 # Recursive "clean" directory target.
-reduce/clean: reduce/CMakeFiles/reduce.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_shared_memory.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 .PHONY : reduce/clean
 
 #=============================================================================
-# Target rules for target reduce/CMakeFiles/reduce.dir
+# Target rules for target reduce/CMakeFiles/reduce_shared_memory.dir
 
 # All Build rule for target.
-reduce/CMakeFiles/reduce.dir/all:
-	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/depend
-	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=1,2 "Built target reduce"
-.PHONY : reduce/CMakeFiles/reduce.dir/all
+reduce/CMakeFiles/reduce_shared_memory.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=1,2 "Built target reduce_shared_memory"
+.PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/all
 
 # Build rule for subdir invocation for target.
-reduce/CMakeFiles/reduce.dir/rule: cmake_check_build_system
+reduce/CMakeFiles/reduce_shared_memory.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_shared_memory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
-.PHONY : reduce/CMakeFiles/reduce.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/rule
 
 # Convenience name for target.
-reduce: reduce/CMakeFiles/reduce.dir/rule
-.PHONY : reduce
+reduce_shared_memory: reduce/CMakeFiles/reduce_shared_memory.dir/rule
+.PHONY : reduce_shared_memory
 
 # clean rule for target.
-reduce/CMakeFiles/reduce.dir/clean:
-	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce.dir/build.make reduce/CMakeFiles/reduce.dir/clean
-.PHONY : reduce/CMakeFiles/reduce.dir/clean
+reduce/CMakeFiles/reduce_shared_memory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_warp_divergence.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_warp_divergence.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_warp_divergence"
+.PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_warp_divergence.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_warp_divergence.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/rule
+
+# Convenience name for target.
+reduce_warp_divergence: reduce/CMakeFiles/reduce_warp_divergence.dir/rule
+.PHONY : reduce_warp_divergence
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_warp_divergence.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
