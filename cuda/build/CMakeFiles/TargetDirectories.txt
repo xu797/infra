@@ -1,0 +1,5 @@
+/home/xu/work/infra/cuda/build/CMakeFiles/edit_cache.dir
+/home/xu/work/infra/cuda/build/CMakeFiles/rebuild_cache.dir
+/home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce.dir
+/home/xu/work/infra/cuda/build/reduce/CMakeFiles/edit_cache.dir
+/home/xu/work/infra/cuda/build/reduce/CMakeFiles/rebuild_cache.dir
