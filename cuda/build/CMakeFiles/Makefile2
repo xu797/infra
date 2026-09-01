@@ -83,6 +83,8 @@ reduce/all: reduce/CMakeFiles/reduce_warp_divergence.dir/all
 reduce/all: reduce/CMakeFiles/reduce_bank_conflict.dir/all
 reduce/all: reduce/CMakeFiles/reduce_idle_thread_A.dir/all
 reduce/all: reduce/CMakeFiles/reduce_idle_thread_B.dir/all
+reduce/all: reduce/CMakeFiles/reduce_unroll_last_warp.dir/all
+reduce/all: reduce/CMakeFiles/reduce_block_num.dir/all
 .PHONY : reduce/all
 
 # Recursive "preinstall" directory target.
@@ -95,6 +97,8 @@ reduce/clean: reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_bank_conflict.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_idle_thread_A.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_unroll_last_warp.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_block_num.dir/clean
 .PHONY : reduce/clean
 
 #=============================================================================
@@ -104,7 +108,7 @@ reduce/clean: reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
 reduce/CMakeFiles/reduce_shared_memory.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=7,8 "Built target reduce_shared_memory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=9,10 "Built target reduce_shared_memory"
 .PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/all
 
 # Build rule for subdir invocation for target.
@@ -130,7 +134,7 @@ reduce/CMakeFiles/reduce_shared_memory.dir/clean:
 reduce/CMakeFiles/reduce_warp_divergence.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=9,10 "Built target reduce_warp_divergence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=13,14 "Built target reduce_warp_divergence"
 .PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/all
 
 # Build rule for subdir invocation for target.
@@ -182,7 +186,7 @@ reduce/CMakeFiles/reduce_bank_conflict.dir/clean:
 reduce/CMakeFiles/reduce_idle_thread_A.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_idle_thread_A"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=5,6 "Built target reduce_idle_thread_A"
 .PHONY : reduce/CMakeFiles/reduce_idle_thread_A.dir/all
 
 # Build rule for subdir invocation for target.
@@ -208,7 +212,7 @@ reduce/CMakeFiles/reduce_idle_thread_A.dir/clean:
 reduce/CMakeFiles/reduce_idle_thread_B.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=5,6 "Built target reduce_idle_thread_B"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=7,8 "Built target reduce_idle_thread_B"
 .PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/all
 
 # Build rule for subdir invocation for target.
@@ -226,6 +230,58 @@ reduce_idle_thread_B: reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
 reduce/CMakeFiles/reduce_idle_thread_B.dir/clean:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
 .PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_unroll_last_warp.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_unroll_last_warp.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=11,12 "Built target reduce_unroll_last_warp"
+.PHONY : reduce/CMakeFiles/reduce_unroll_last_warp.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_unroll_last_warp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule
+
+# Convenience name for target.
+reduce_unroll_last_warp: reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule
+.PHONY : reduce_unroll_last_warp
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_unroll_last_warp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_unroll_last_warp.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_block_num.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_block_num.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_block_num"
+.PHONY : reduce/CMakeFiles/reduce_block_num.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_block_num.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_block_num.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_block_num.dir/rule
+
+# Convenience name for target.
+reduce_block_num: reduce/CMakeFiles/reduce_block_num.dir/rule
+.PHONY : reduce_block_num
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_block_num.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_block_num.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

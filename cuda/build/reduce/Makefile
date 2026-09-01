@@ -186,6 +186,34 @@ reduce_idle_thread_B/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
 .PHONY : reduce_idle_thread_B/fast
 
+# Convenience name for target.
+reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule
+
+# Convenience name for target.
+reduce_unroll_last_warp: reduce/CMakeFiles/reduce_unroll_last_warp.dir/rule
+.PHONY : reduce_unroll_last_warp
+
+# fast build rule for target.
+reduce_unroll_last_warp/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/build
+.PHONY : reduce_unroll_last_warp/fast
+
+# Convenience name for target.
+reduce/CMakeFiles/reduce_block_num.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_block_num.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_block_num.dir/rule
+
+# Convenience name for target.
+reduce_block_num: reduce/CMakeFiles/reduce_block_num.dir/rule
+.PHONY : reduce_block_num
+
+# fast build rule for target.
+reduce_block_num/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/build
+.PHONY : reduce_block_num/fast
+
 reduce_bank_conflict.o: reduce_bank_conflict.cu.o
 .PHONY : reduce_bank_conflict.o
 
@@ -209,6 +237,30 @@ reduce_bank_conflict.s: reduce_bank_conflict.cu.s
 reduce_bank_conflict.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/reduce_bank_conflict.cu.s
 .PHONY : reduce_bank_conflict.cu.s
+
+reduce_block_num.o: reduce_block_num.cu.o
+.PHONY : reduce_block_num.o
+
+# target to build an object file
+reduce_block_num.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/reduce_block_num.cu.o
+.PHONY : reduce_block_num.cu.o
+
+reduce_block_num.i: reduce_block_num.cu.i
+.PHONY : reduce_block_num.i
+
+# target to preprocess a source file
+reduce_block_num.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/reduce_block_num.cu.i
+.PHONY : reduce_block_num.cu.i
+
+reduce_block_num.s: reduce_block_num.cu.s
+.PHONY : reduce_block_num.s
+
+# target to generate assembly for a file
+reduce_block_num.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/reduce_block_num.cu.s
+.PHONY : reduce_block_num.cu.s
 
 reduce_idle_thread_A.o: reduce_idle_thread_A.cu.o
 .PHONY : reduce_idle_thread_A.o
@@ -282,6 +334,30 @@ reduce_shared_memory.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/reduce_shared_memory.cu.s
 .PHONY : reduce_shared_memory.cu.s
 
+reduce_unroll_last_warp.o: reduce_unroll_last_warp.cu.o
+.PHONY : reduce_unroll_last_warp.o
+
+# target to build an object file
+reduce_unroll_last_warp.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/reduce_unroll_last_warp.cu.o
+.PHONY : reduce_unroll_last_warp.cu.o
+
+reduce_unroll_last_warp.i: reduce_unroll_last_warp.cu.i
+.PHONY : reduce_unroll_last_warp.i
+
+# target to preprocess a source file
+reduce_unroll_last_warp.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/reduce_unroll_last_warp.cu.i
+.PHONY : reduce_unroll_last_warp.cu.i
+
+reduce_unroll_last_warp.s: reduce_unroll_last_warp.cu.s
+.PHONY : reduce_unroll_last_warp.s
+
+# target to generate assembly for a file
+reduce_unroll_last_warp.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/reduce_unroll_last_warp.cu.s
+.PHONY : reduce_unroll_last_warp.cu.s
+
 reduce_warp_divergence.o: reduce_warp_divergence.cu.o
 .PHONY : reduce_warp_divergence.o
 
@@ -315,13 +391,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... reduce_bank_conflict"
+	@echo "... reduce_block_num"
 	@echo "... reduce_idle_thread_A"
 	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
+	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
 	@echo "... reduce_bank_conflict.o"
 	@echo "... reduce_bank_conflict.i"
 	@echo "... reduce_bank_conflict.s"
+	@echo "... reduce_block_num.o"
+	@echo "... reduce_block_num.i"
+	@echo "... reduce_block_num.s"
 	@echo "... reduce_idle_thread_A.o"
 	@echo "... reduce_idle_thread_A.i"
 	@echo "... reduce_idle_thread_A.s"
@@ -331,6 +412,9 @@ help:
 	@echo "... reduce_shared_memory.o"
 	@echo "... reduce_shared_memory.i"
 	@echo "... reduce_shared_memory.s"
+	@echo "... reduce_unroll_last_warp.o"
+	@echo "... reduce_unroll_last_warp.i"
+	@echo "... reduce_unroll_last_warp.s"
 	@echo "... reduce_warp_divergence.o"
 	@echo "... reduce_warp_divergence.i"
 	@echo "... reduce_warp_divergence.s"

@@ -181,6 +181,32 @@ reduce_idle_thread_B/fast:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
 .PHONY : reduce_idle_thread_B/fast
 
+#=============================================================================
+# Target rules for targets named reduce_unroll_last_warp
+
+# Build rule for target.
+reduce_unroll_last_warp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_unroll_last_warp
+.PHONY : reduce_unroll_last_warp
+
+# fast build rule for target.
+reduce_unroll_last_warp/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_unroll_last_warp.dir/build.make reduce/CMakeFiles/reduce_unroll_last_warp.dir/build
+.PHONY : reduce_unroll_last_warp/fast
+
+#=============================================================================
+# Target rules for targets named reduce_block_num
+
+# Build rule for target.
+reduce_block_num: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_block_num
+.PHONY : reduce_block_num
+
+# fast build rule for target.
+reduce_block_num/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/build
+.PHONY : reduce_block_num/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,9 +216,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... reduce_bank_conflict"
+	@echo "... reduce_block_num"
 	@echo "... reduce_idle_thread_A"
 	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
+	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
 .PHONY : help
 
