@@ -58,4 +58,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "reduce/CMakeFiles/reduce_shared_memory.dir/DependInfo.cmake"
   "reduce/CMakeFiles/reduce_warp_divergence.dir/DependInfo.cmake"
+  "reduce/CMakeFiles/reduce_bank_conflict.dir/DependInfo.cmake"
   )

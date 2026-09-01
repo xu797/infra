@@ -80,6 +80,7 @@ clean: reduce/clean
 # Recursive "all" directory target.
 reduce/all: reduce/CMakeFiles/reduce_shared_memory.dir/all
 reduce/all: reduce/CMakeFiles/reduce_warp_divergence.dir/all
+reduce/all: reduce/CMakeFiles/reduce_bank_conflict.dir/all
 .PHONY : reduce/all
 
 # Recursive "preinstall" directory target.
@@ -89,6 +90,7 @@ reduce/preinstall:
 # Recursive "clean" directory target.
 reduce/clean: reduce/CMakeFiles/reduce_shared_memory.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_warp_divergence.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_bank_conflict.dir/clean
 .PHONY : reduce/clean
 
 #=============================================================================
@@ -98,7 +100,7 @@ reduce/clean: reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 reduce/CMakeFiles/reduce_shared_memory.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=1,2 "Built target reduce_shared_memory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_shared_memory"
 .PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/all
 
 # Build rule for subdir invocation for target.
@@ -124,7 +126,7 @@ reduce/CMakeFiles/reduce_shared_memory.dir/clean:
 reduce/CMakeFiles/reduce_warp_divergence.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_warp_divergence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=5,6 "Built target reduce_warp_divergence"
 .PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/all
 
 # Build rule for subdir invocation for target.
@@ -142,6 +144,32 @@ reduce_warp_divergence: reduce/CMakeFiles/reduce_warp_divergence.dir/rule
 reduce/CMakeFiles/reduce_warp_divergence.dir/clean:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 .PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_bank_conflict.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_bank_conflict.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=1,2 "Built target reduce_bank_conflict"
+.PHONY : reduce/CMakeFiles/reduce_bank_conflict.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_bank_conflict.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_bank_conflict.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_bank_conflict.dir/rule
+
+# Convenience name for target.
+reduce_bank_conflict: reduce/CMakeFiles/reduce_bank_conflict.dir/rule
+.PHONY : reduce_bank_conflict
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_bank_conflict.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_bank_conflict.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

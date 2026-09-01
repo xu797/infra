@@ -2,5 +2,6 @@
 /home/xu/work/infra/cuda/build/CMakeFiles/rebuild_cache.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_shared_memory.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_warp_divergence.dir
+/home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_bank_conflict.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/edit_cache.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/rebuild_cache.dir

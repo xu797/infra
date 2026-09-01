@@ -144,6 +144,44 @@ reduce_warp_divergence/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
 .PHONY : reduce_warp_divergence/fast
 
+# Convenience name for target.
+reduce/CMakeFiles/reduce_bank_conflict.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_bank_conflict.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_bank_conflict.dir/rule
+
+# Convenience name for target.
+reduce_bank_conflict: reduce/CMakeFiles/reduce_bank_conflict.dir/rule
+.PHONY : reduce_bank_conflict
+
+# fast build rule for target.
+reduce_bank_conflict/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/build
+.PHONY : reduce_bank_conflict/fast
+
+reduce_bank_conflict.o: reduce_bank_conflict.cu.o
+.PHONY : reduce_bank_conflict.o
+
+# target to build an object file
+reduce_bank_conflict.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/reduce_bank_conflict.cu.o
+.PHONY : reduce_bank_conflict.cu.o
+
+reduce_bank_conflict.i: reduce_bank_conflict.cu.i
+.PHONY : reduce_bank_conflict.i
+
+# target to preprocess a source file
+reduce_bank_conflict.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/reduce_bank_conflict.cu.i
+.PHONY : reduce_bank_conflict.cu.i
+
+reduce_bank_conflict.s: reduce_bank_conflict.cu.s
+.PHONY : reduce_bank_conflict.s
+
+# target to generate assembly for a file
+reduce_bank_conflict.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/reduce_bank_conflict.cu.s
+.PHONY : reduce_bank_conflict.cu.s
+
 reduce_shared_memory.o: reduce_shared_memory.cu.o
 .PHONY : reduce_shared_memory.o
 
@@ -200,8 +238,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... reduce_bank_conflict"
 	@echo "... reduce_shared_memory"
 	@echo "... reduce_warp_divergence"
+	@echo "... reduce_bank_conflict.o"
+	@echo "... reduce_bank_conflict.i"
+	@echo "... reduce_bank_conflict.s"
 	@echo "... reduce_shared_memory.o"
 	@echo "... reduce_shared_memory.i"
 	@echo "... reduce_shared_memory.s"

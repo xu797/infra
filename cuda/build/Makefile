@@ -142,6 +142,19 @@ reduce_warp_divergence/fast:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
 .PHONY : reduce_warp_divergence/fast
 
+#=============================================================================
+# Target rules for targets named reduce_bank_conflict
+
+# Build rule for target.
+reduce_bank_conflict: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_bank_conflict
+.PHONY : reduce_bank_conflict
+
+# fast build rule for target.
+reduce_bank_conflict/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/build
+.PHONY : reduce_bank_conflict/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,6 +163,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... reduce_bank_conflict"
 	@echo "... reduce_shared_memory"
 	@echo "... reduce_warp_divergence"
 .PHONY : help
