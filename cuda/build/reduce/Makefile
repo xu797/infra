@@ -158,6 +158,34 @@ reduce_bank_conflict/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/build
 .PHONY : reduce_bank_conflict/fast
 
+# Convenience name for target.
+reduce/CMakeFiles/reduce_idle_thread_A.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_idle_thread_A.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_A.dir/rule
+
+# Convenience name for target.
+reduce_idle_thread_A: reduce/CMakeFiles/reduce_idle_thread_A.dir/rule
+.PHONY : reduce_idle_thread_A
+
+# fast build rule for target.
+reduce_idle_thread_A/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/build
+.PHONY : reduce_idle_thread_A/fast
+
+# Convenience name for target.
+reduce/CMakeFiles/reduce_idle_thread_B.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
+
+# Convenience name for target.
+reduce_idle_thread_B: reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
+.PHONY : reduce_idle_thread_B
+
+# fast build rule for target.
+reduce_idle_thread_B/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
+.PHONY : reduce_idle_thread_B/fast
+
 reduce_bank_conflict.o: reduce_bank_conflict.cu.o
 .PHONY : reduce_bank_conflict.o
 
@@ -181,6 +209,54 @@ reduce_bank_conflict.s: reduce_bank_conflict.cu.s
 reduce_bank_conflict.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/reduce_bank_conflict.cu.s
 .PHONY : reduce_bank_conflict.cu.s
+
+reduce_idle_thread_A.o: reduce_idle_thread_A.cu.o
+.PHONY : reduce_idle_thread_A.o
+
+# target to build an object file
+reduce_idle_thread_A.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/reduce_idle_thread_A.cu.o
+.PHONY : reduce_idle_thread_A.cu.o
+
+reduce_idle_thread_A.i: reduce_idle_thread_A.cu.i
+.PHONY : reduce_idle_thread_A.i
+
+# target to preprocess a source file
+reduce_idle_thread_A.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/reduce_idle_thread_A.cu.i
+.PHONY : reduce_idle_thread_A.cu.i
+
+reduce_idle_thread_A.s: reduce_idle_thread_A.cu.s
+.PHONY : reduce_idle_thread_A.s
+
+# target to generate assembly for a file
+reduce_idle_thread_A.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/reduce_idle_thread_A.cu.s
+.PHONY : reduce_idle_thread_A.cu.s
+
+reduce_idle_thread_B.o: reduce_idle_thread_B.cu.o
+.PHONY : reduce_idle_thread_B.o
+
+# target to build an object file
+reduce_idle_thread_B.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/reduce_idle_thread_B.cu.o
+.PHONY : reduce_idle_thread_B.cu.o
+
+reduce_idle_thread_B.i: reduce_idle_thread_B.cu.i
+.PHONY : reduce_idle_thread_B.i
+
+# target to preprocess a source file
+reduce_idle_thread_B.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/reduce_idle_thread_B.cu.i
+.PHONY : reduce_idle_thread_B.cu.i
+
+reduce_idle_thread_B.s: reduce_idle_thread_B.cu.s
+.PHONY : reduce_idle_thread_B.s
+
+# target to generate assembly for a file
+reduce_idle_thread_B.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/reduce_idle_thread_B.cu.s
+.PHONY : reduce_idle_thread_B.cu.s
 
 reduce_shared_memory.o: reduce_shared_memory.cu.o
 .PHONY : reduce_shared_memory.o
@@ -239,11 +315,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... reduce_bank_conflict"
+	@echo "... reduce_idle_thread_A"
+	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
 	@echo "... reduce_warp_divergence"
 	@echo "... reduce_bank_conflict.o"
 	@echo "... reduce_bank_conflict.i"
 	@echo "... reduce_bank_conflict.s"
+	@echo "... reduce_idle_thread_A.o"
+	@echo "... reduce_idle_thread_A.i"
+	@echo "... reduce_idle_thread_A.s"
+	@echo "... reduce_idle_thread_B.o"
+	@echo "... reduce_idle_thread_B.i"
+	@echo "... reduce_idle_thread_B.s"
 	@echo "... reduce_shared_memory.o"
 	@echo "... reduce_shared_memory.i"
 	@echo "... reduce_shared_memory.s"

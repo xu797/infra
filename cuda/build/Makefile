@@ -155,6 +155,32 @@ reduce_bank_conflict/fast:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/build
 .PHONY : reduce_bank_conflict/fast
 
+#=============================================================================
+# Target rules for targets named reduce_idle_thread_A
+
+# Build rule for target.
+reduce_idle_thread_A: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_idle_thread_A
+.PHONY : reduce_idle_thread_A
+
+# fast build rule for target.
+reduce_idle_thread_A/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/build
+.PHONY : reduce_idle_thread_A/fast
+
+#=============================================================================
+# Target rules for targets named reduce_idle_thread_B
+
+# Build rule for target.
+reduce_idle_thread_B: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_idle_thread_B
+.PHONY : reduce_idle_thread_B
+
+# fast build rule for target.
+reduce_idle_thread_B/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
+.PHONY : reduce_idle_thread_B/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +190,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... reduce_bank_conflict"
+	@echo "... reduce_idle_thread_A"
+	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
 	@echo "... reduce_warp_divergence"
 .PHONY : help

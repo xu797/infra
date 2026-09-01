@@ -81,6 +81,8 @@ clean: reduce/clean
 reduce/all: reduce/CMakeFiles/reduce_shared_memory.dir/all
 reduce/all: reduce/CMakeFiles/reduce_warp_divergence.dir/all
 reduce/all: reduce/CMakeFiles/reduce_bank_conflict.dir/all
+reduce/all: reduce/CMakeFiles/reduce_idle_thread_A.dir/all
+reduce/all: reduce/CMakeFiles/reduce_idle_thread_B.dir/all
 .PHONY : reduce/all
 
 # Recursive "preinstall" directory target.
@@ -91,6 +93,8 @@ reduce/preinstall:
 reduce/clean: reduce/CMakeFiles/reduce_shared_memory.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_warp_divergence.dir/clean
 reduce/clean: reduce/CMakeFiles/reduce_bank_conflict.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_idle_thread_A.dir/clean
+reduce/clean: reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
 .PHONY : reduce/clean
 
 #=============================================================================
@@ -100,7 +104,7 @@ reduce/clean: reduce/CMakeFiles/reduce_bank_conflict.dir/clean
 reduce/CMakeFiles/reduce_shared_memory.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_shared_memory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=7,8 "Built target reduce_shared_memory"
 .PHONY : reduce/CMakeFiles/reduce_shared_memory.dir/all
 
 # Build rule for subdir invocation for target.
@@ -126,7 +130,7 @@ reduce/CMakeFiles/reduce_shared_memory.dir/clean:
 reduce/CMakeFiles/reduce_warp_divergence.dir/all:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/depend
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_warp_divergence.dir/build.make reduce/CMakeFiles/reduce_warp_divergence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=5,6 "Built target reduce_warp_divergence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=9,10 "Built target reduce_warp_divergence"
 .PHONY : reduce/CMakeFiles/reduce_warp_divergence.dir/all
 
 # Build rule for subdir invocation for target.
@@ -170,6 +174,58 @@ reduce_bank_conflict: reduce/CMakeFiles/reduce_bank_conflict.dir/rule
 reduce/CMakeFiles/reduce_bank_conflict.dir/clean:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_bank_conflict.dir/build.make reduce/CMakeFiles/reduce_bank_conflict.dir/clean
 .PHONY : reduce/CMakeFiles/reduce_bank_conflict.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_idle_thread_A.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_idle_thread_A.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=3,4 "Built target reduce_idle_thread_A"
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_A.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_idle_thread_A.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_idle_thread_A.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_A.dir/rule
+
+# Convenience name for target.
+reduce_idle_thread_A: reduce/CMakeFiles/reduce_idle_thread_A.dir/rule
+.PHONY : reduce_idle_thread_A
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_idle_thread_A.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_A.dir/build.make reduce/CMakeFiles/reduce_idle_thread_A.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_A.dir/clean
+
+#=============================================================================
+# Target rules for target reduce/CMakeFiles/reduce_idle_thread_B.dir
+
+# All Build rule for target.
+reduce/CMakeFiles/reduce_idle_thread_B.dir/all:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/depend
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=5,6 "Built target reduce_idle_thread_B"
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/all
+
+# Build rule for subdir invocation for target.
+reduce/CMakeFiles/reduce_idle_thread_B.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_idle_thread_B.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
+
+# Convenience name for target.
+reduce_idle_thread_B: reduce/CMakeFiles/reduce_idle_thread_B.dir/rule
+.PHONY : reduce_idle_thread_B
+
+# clean rule for target.
+reduce/CMakeFiles/reduce_idle_thread_B.dir/clean:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_idle_thread_B.dir/build.make reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
+.PHONY : reduce/CMakeFiles/reduce_idle_thread_B.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
