@@ -246,6 +246,19 @@ sgemm01_baseline/fast:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm01_baseline.dir/build.make sgemm/CMakeFiles/sgemm01_baseline.dir/build
 .PHONY : sgemm01_baseline/fast
 
+#=============================================================================
+# Target rules for targets named sgemm02_shared_memory
+
+# Build rule for target.
+sgemm02_shared_memory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm02_shared_memory
+.PHONY : sgemm02_shared_memory
+
+# fast build rule for target.
+sgemm02_shared_memory/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/build
+.PHONY : sgemm02_shared_memory/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -264,6 +277,7 @@ help:
 	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
 	@echo "... sgemm01_baseline"
+	@echo "... sgemm02_shared_memory"
 .PHONY : help
 
 

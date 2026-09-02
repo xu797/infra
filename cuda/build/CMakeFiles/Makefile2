@@ -112,6 +112,7 @@ reduce/clean: reduce/CMakeFiles/reduce_shuffle.dir/clean
 # Recursive "all" directory target.
 sgemm/all: sgemm/CMakeFiles/hello_sgemm.dir/all
 sgemm/all: sgemm/CMakeFiles/sgemm01_baseline.dir/all
+sgemm/all: sgemm/CMakeFiles/sgemm02_shared_memory.dir/all
 .PHONY : sgemm/all
 
 # Recursive "preinstall" directory target.
@@ -121,6 +122,7 @@ sgemm/preinstall:
 # Recursive "clean" directory target.
 sgemm/clean: sgemm/CMakeFiles/hello_sgemm.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm01_baseline.dir/clean
+sgemm/clean: sgemm/CMakeFiles/sgemm02_shared_memory.dir/clean
 .PHONY : sgemm/clean
 
 #=============================================================================
@@ -382,6 +384,32 @@ sgemm01_baseline: sgemm/CMakeFiles/sgemm01_baseline.dir/rule
 sgemm/CMakeFiles/sgemm01_baseline.dir/clean:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm01_baseline.dir/build.make sgemm/CMakeFiles/sgemm01_baseline.dir/clean
 .PHONY : sgemm/CMakeFiles/sgemm01_baseline.dir/clean
+
+#=============================================================================
+# Target rules for target sgemm/CMakeFiles/sgemm02_shared_memory.dir
+
+# All Build rule for target.
+sgemm/CMakeFiles/sgemm02_shared_memory.dir/all:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/depend
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=21,22 "Built target sgemm02_shared_memory"
+.PHONY : sgemm/CMakeFiles/sgemm02_shared_memory.dir/all
+
+# Build rule for subdir invocation for target.
+sgemm/CMakeFiles/sgemm02_shared_memory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm02_shared_memory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : sgemm/CMakeFiles/sgemm02_shared_memory.dir/rule
+
+# Convenience name for target.
+sgemm02_shared_memory: sgemm/CMakeFiles/sgemm02_shared_memory.dir/rule
+.PHONY : sgemm02_shared_memory
+
+# clean rule for target.
+sgemm/CMakeFiles/sgemm02_shared_memory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/clean
+.PHONY : sgemm/CMakeFiles/sgemm02_shared_memory.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
