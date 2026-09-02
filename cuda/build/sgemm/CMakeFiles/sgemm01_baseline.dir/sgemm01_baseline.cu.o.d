@@ -1,4 +1,4 @@
-reduce/CMakeFiles/hello_reduce.dir/hello_reduce.cu.o : /home/xu/work/infra/cuda/reduce/hello_reduce.cu \
+sgemm/CMakeFiles/sgemm01_baseline.dir/sgemm01_baseline.cu.o : /home/xu/work/infra/cuda/sgemm/sgemm01_baseline.cu \
     /usr/include/stdc-predef.h \
     /usr/local/cuda-11.8/include/cuda_runtime.h \
     /usr/local/cuda-11.8/include/crt/host_config.h \
@@ -182,9 +182,4 @@ reduce/CMakeFiles/hello_reduce.dir/hello_reduce.cu.o : /home/xu/work/infra/cuda/
     /usr/local/cuda-11.8/include/device_launch_parameters.h \
     /usr/include/c++/11/utility \
     /usr/include/c++/11/bits/stl_relops.h \
-    /usr/include/c++/11/initializer_list \
-    /usr/local/cuda-11.8/include/cuda.h \
-    /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
-    /usr/include/stdint.h \
-    /usr/include/x86_64-linux-gnu/bits/wchar.h \
-    /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
+    /usr/include/c++/11/initializer_list

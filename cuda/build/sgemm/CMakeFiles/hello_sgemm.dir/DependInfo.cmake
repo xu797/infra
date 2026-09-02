@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/xu/work/infra/cuda/reduce/hello_reduce.cu" "reduce/CMakeFiles/hello_reduce.dir/hello_reduce.cu.o" "gcc" "reduce/CMakeFiles/hello_reduce.dir/hello_reduce.cu.o.d"
+  "/home/xu/work/infra/cuda/sgemm/hello_sgemm.cu" "sgemm/CMakeFiles/hello_sgemm.dir/hello_sgemm.cu.o" "gcc" "sgemm/CMakeFiles/hello_sgemm.dir/hello_sgemm.cu.o.d"
   )
 
 # Targets to which this target links.

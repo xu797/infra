@@ -220,6 +220,32 @@ reduce_shuffle/fast:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/build
 .PHONY : reduce_shuffle/fast
 
+#=============================================================================
+# Target rules for targets named hello_sgemm
+
+# Build rule for target.
+hello_sgemm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_sgemm
+.PHONY : hello_sgemm
+
+# fast build rule for target.
+hello_sgemm/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/hello_sgemm.dir/build.make sgemm/CMakeFiles/hello_sgemm.dir/build
+.PHONY : hello_sgemm/fast
+
+#=============================================================================
+# Target rules for targets named sgemm01_baseline
+
+# Build rule for target.
+sgemm01_baseline: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm01_baseline
+.PHONY : sgemm01_baseline
+
+# fast build rule for target.
+sgemm01_baseline/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm01_baseline.dir/build.make sgemm/CMakeFiles/sgemm01_baseline.dir/build
+.PHONY : sgemm01_baseline/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -228,6 +254,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... hello_sgemm"
 	@echo "... reduce_bank_conflict"
 	@echo "... reduce_block_num"
 	@echo "... reduce_idle_thread_A"
@@ -236,6 +263,7 @@ help:
 	@echo "... reduce_shuffle"
 	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
+	@echo "... sgemm01_baseline"
 .PHONY : help
 
 

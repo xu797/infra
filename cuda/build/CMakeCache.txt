@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -229,11 +229,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
-
-CUDAToolkit_BIN_DIR:PATH=/usr/local/cuda-11.8/bin
-
-//Path to a program.
-CUDAToolkit_NVCC_EXECUTABLE:FILEPATH=/usr/local/cuda-11.8/bin/nvcc
 
 //Path to a library.
 CUDAToolkit_rt_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.a
@@ -524,7 +519,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -567,8 +562,6 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CUDAToolkit_NVCC_EXECUTABLE
-CUDAToolkit_NVCC_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDAToolkit_rt_LIBRARY
 CUDAToolkit_rt_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_CUDART

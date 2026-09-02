@@ -1,4 +1,4 @@
-reduce/CMakeFiles/reduce.dir/reduce.cu.o : /home/xu/work/infra/cuda/reduce/reduce.cu \
+sgemm/CMakeFiles/hello_sgemm.dir/hello_sgemm.cu.o : /home/xu/work/infra/cuda/sgemm/hello_sgemm.cu \
     /usr/include/stdc-predef.h \
     /usr/local/cuda-11.8/include/cuda_runtime.h \
     /usr/local/cuda-11.8/include/crt/host_config.h \
