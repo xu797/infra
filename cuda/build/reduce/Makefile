@@ -214,6 +214,20 @@ reduce_block_num/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/build
 .PHONY : reduce_block_num/fast
 
+# Convenience name for target.
+reduce/CMakeFiles/reduce_shuffle.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce/CMakeFiles/reduce_shuffle.dir/rule
+.PHONY : reduce/CMakeFiles/reduce_shuffle.dir/rule
+
+# Convenience name for target.
+reduce_shuffle: reduce/CMakeFiles/reduce_shuffle.dir/rule
+.PHONY : reduce_shuffle
+
+# fast build rule for target.
+reduce_shuffle/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/build
+.PHONY : reduce_shuffle/fast
+
 reduce_bank_conflict.o: reduce_bank_conflict.cu.o
 .PHONY : reduce_bank_conflict.o
 
@@ -334,6 +348,30 @@ reduce_shared_memory.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shared_memory.dir/build.make reduce/CMakeFiles/reduce_shared_memory.dir/reduce_shared_memory.cu.s
 .PHONY : reduce_shared_memory.cu.s
 
+reduce_shuffle.o: reduce_shuffle.cu.o
+.PHONY : reduce_shuffle.o
+
+# target to build an object file
+reduce_shuffle.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/reduce_shuffle.cu.o
+.PHONY : reduce_shuffle.cu.o
+
+reduce_shuffle.i: reduce_shuffle.cu.i
+.PHONY : reduce_shuffle.i
+
+# target to preprocess a source file
+reduce_shuffle.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/reduce_shuffle.cu.i
+.PHONY : reduce_shuffle.cu.i
+
+reduce_shuffle.s: reduce_shuffle.cu.s
+.PHONY : reduce_shuffle.s
+
+# target to generate assembly for a file
+reduce_shuffle.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/reduce_shuffle.cu.s
+.PHONY : reduce_shuffle.cu.s
+
 reduce_unroll_last_warp.o: reduce_unroll_last_warp.cu.o
 .PHONY : reduce_unroll_last_warp.o
 
@@ -395,6 +433,7 @@ help:
 	@echo "... reduce_idle_thread_A"
 	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
+	@echo "... reduce_shuffle"
 	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
 	@echo "... reduce_bank_conflict.o"
@@ -412,6 +451,9 @@ help:
 	@echo "... reduce_shared_memory.o"
 	@echo "... reduce_shared_memory.i"
 	@echo "... reduce_shared_memory.s"
+	@echo "... reduce_shuffle.o"
+	@echo "... reduce_shuffle.i"
+	@echo "... reduce_shuffle.s"
 	@echo "... reduce_unroll_last_warp.o"
 	@echo "... reduce_unroll_last_warp.i"
 	@echo "... reduce_unroll_last_warp.s"

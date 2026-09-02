@@ -207,6 +207,19 @@ reduce_block_num/fast:
 	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_block_num.dir/build.make reduce/CMakeFiles/reduce_block_num.dir/build
 .PHONY : reduce_block_num/fast
 
+#=============================================================================
+# Target rules for targets named reduce_shuffle
+
+# Build rule for target.
+reduce_shuffle: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_shuffle
+.PHONY : reduce_shuffle
+
+# fast build rule for target.
+reduce_shuffle/fast:
+	$(MAKE) $(MAKESILENT) -f reduce/CMakeFiles/reduce_shuffle.dir/build.make reduce/CMakeFiles/reduce_shuffle.dir/build
+.PHONY : reduce_shuffle/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,6 +233,7 @@ help:
 	@echo "... reduce_idle_thread_A"
 	@echo "... reduce_idle_thread_B"
 	@echo "... reduce_shared_memory"
+	@echo "... reduce_shuffle"
 	@echo "... reduce_unroll_last_warp"
 	@echo "... reduce_warp_divergence"
 .PHONY : help

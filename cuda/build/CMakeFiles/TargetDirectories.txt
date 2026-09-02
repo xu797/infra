@@ -7,5 +7,6 @@
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_idle_thread_B.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_unroll_last_warp.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_block_num.dir
+/home/xu/work/infra/cuda/build/reduce/CMakeFiles/reduce_shuffle.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/edit_cache.dir
 /home/xu/work/infra/cuda/build/reduce/CMakeFiles/rebuild_cache.dir

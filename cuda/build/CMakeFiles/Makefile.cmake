@@ -63,4 +63,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "reduce/CMakeFiles/reduce_idle_thread_B.dir/DependInfo.cmake"
   "reduce/CMakeFiles/reduce_unroll_last_warp.dir/DependInfo.cmake"
   "reduce/CMakeFiles/reduce_block_num.dir/DependInfo.cmake"
+  "reduce/CMakeFiles/reduce_shuffle.dir/DependInfo.cmake"
   )
