@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/sgemm03_shared_memory.dir/sgemm03_shared_memory.cu.o -o sgemm03_shared_memory  /usr/local/cuda-11.8/lib64/libcudart.so -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib"

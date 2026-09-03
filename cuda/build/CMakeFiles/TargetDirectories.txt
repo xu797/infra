@@ -13,5 +13,6 @@
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/hello_sgemm.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm01_baseline.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm02_shared_memory.dir
+/home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm03_shared_memory.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/edit_cache.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/rebuild_cache.dir

@@ -158,6 +158,20 @@ sgemm02_shared_memory/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/build
 .PHONY : sgemm02_shared_memory/fast
 
+# Convenience name for target.
+sgemm/CMakeFiles/sgemm03_shared_memory.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm03_shared_memory.dir/rule
+.PHONY : sgemm/CMakeFiles/sgemm03_shared_memory.dir/rule
+
+# Convenience name for target.
+sgemm03_shared_memory: sgemm/CMakeFiles/sgemm03_shared_memory.dir/rule
+.PHONY : sgemm03_shared_memory
+
+# fast build rule for target.
+sgemm03_shared_memory/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/build
+.PHONY : sgemm03_shared_memory/fast
+
 hello_sgemm.o: hello_sgemm.cu.o
 .PHONY : hello_sgemm.o
 
@@ -230,6 +244,30 @@ sgemm02_shared_memory.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm02_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm02_shared_memory.dir/sgemm02_shared_memory.cu.s
 .PHONY : sgemm02_shared_memory.cu.s
 
+sgemm03_shared_memory.o: sgemm03_shared_memory.cu.o
+.PHONY : sgemm03_shared_memory.o
+
+# target to build an object file
+sgemm03_shared_memory.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/sgemm03_shared_memory.cu.o
+.PHONY : sgemm03_shared_memory.cu.o
+
+sgemm03_shared_memory.i: sgemm03_shared_memory.cu.i
+.PHONY : sgemm03_shared_memory.i
+
+# target to preprocess a source file
+sgemm03_shared_memory.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/sgemm03_shared_memory.cu.i
+.PHONY : sgemm03_shared_memory.cu.i
+
+sgemm03_shared_memory.s: sgemm03_shared_memory.cu.s
+.PHONY : sgemm03_shared_memory.s
+
+# target to generate assembly for a file
+sgemm03_shared_memory.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/sgemm03_shared_memory.cu.s
+.PHONY : sgemm03_shared_memory.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,6 +279,7 @@ help:
 	@echo "... hello_sgemm"
 	@echo "... sgemm01_baseline"
 	@echo "... sgemm02_shared_memory"
+	@echo "... sgemm03_shared_memory"
 	@echo "... hello_sgemm.o"
 	@echo "... hello_sgemm.i"
 	@echo "... hello_sgemm.s"
@@ -250,6 +289,9 @@ help:
 	@echo "... sgemm02_shared_memory.o"
 	@echo "... sgemm02_shared_memory.i"
 	@echo "... sgemm02_shared_memory.s"
+	@echo "... sgemm03_shared_memory.o"
+	@echo "... sgemm03_shared_memory.i"
+	@echo "... sgemm03_shared_memory.s"
 .PHONY : help
 
 

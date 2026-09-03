@@ -69,4 +69,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "sgemm/CMakeFiles/hello_sgemm.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm01_baseline.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm02_shared_memory.dir/DependInfo.cmake"
+  "sgemm/CMakeFiles/sgemm03_shared_memory.dir/DependInfo.cmake"
   )
