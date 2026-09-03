@@ -272,6 +272,19 @@ sgemm03_shared_memory/fast:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/build
 .PHONY : sgemm03_shared_memory/fast
 
+#=============================================================================
+# Target rules for targets named sgemm04_per_thread_work
+
+# Build rule for target.
+sgemm04_per_thread_work: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm04_per_thread_work
+.PHONY : sgemm04_per_thread_work
+
+# fast build rule for target.
+sgemm04_per_thread_work/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build
+.PHONY : sgemm04_per_thread_work/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -292,6 +305,7 @@ help:
 	@echo "... sgemm01_baseline"
 	@echo "... sgemm02_shared_memory"
 	@echo "... sgemm03_shared_memory"
+	@echo "... sgemm04_per_thread_work"
 .PHONY : help
 
 

@@ -172,6 +172,20 @@ sgemm03_shared_memory/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/build
 .PHONY : sgemm03_shared_memory/fast
 
+# Convenience name for target.
+sgemm/CMakeFiles/sgemm04_per_thread_work.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm04_per_thread_work.dir/rule
+.PHONY : sgemm/CMakeFiles/sgemm04_per_thread_work.dir/rule
+
+# Convenience name for target.
+sgemm04_per_thread_work: sgemm/CMakeFiles/sgemm04_per_thread_work.dir/rule
+.PHONY : sgemm04_per_thread_work
+
+# fast build rule for target.
+sgemm04_per_thread_work/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build
+.PHONY : sgemm04_per_thread_work/fast
+
 hello_sgemm.o: hello_sgemm.cu.o
 .PHONY : hello_sgemm.o
 
@@ -268,6 +282,30 @@ sgemm03_shared_memory.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm03_shared_memory.dir/build.make sgemm/CMakeFiles/sgemm03_shared_memory.dir/sgemm03_shared_memory.cu.s
 .PHONY : sgemm03_shared_memory.cu.s
 
+sgemm04_per_thread_work.o: sgemm04_per_thread_work.cu.o
+.PHONY : sgemm04_per_thread_work.o
+
+# target to build an object file
+sgemm04_per_thread_work.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/sgemm04_per_thread_work.cu.o
+.PHONY : sgemm04_per_thread_work.cu.o
+
+sgemm04_per_thread_work.i: sgemm04_per_thread_work.cu.i
+.PHONY : sgemm04_per_thread_work.i
+
+# target to preprocess a source file
+sgemm04_per_thread_work.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/sgemm04_per_thread_work.cu.i
+.PHONY : sgemm04_per_thread_work.cu.i
+
+sgemm04_per_thread_work.s: sgemm04_per_thread_work.cu.s
+.PHONY : sgemm04_per_thread_work.s
+
+# target to generate assembly for a file
+sgemm04_per_thread_work.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/sgemm04_per_thread_work.cu.s
+.PHONY : sgemm04_per_thread_work.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -280,6 +318,7 @@ help:
 	@echo "... sgemm01_baseline"
 	@echo "... sgemm02_shared_memory"
 	@echo "... sgemm03_shared_memory"
+	@echo "... sgemm04_per_thread_work"
 	@echo "... hello_sgemm.o"
 	@echo "... hello_sgemm.i"
 	@echo "... hello_sgemm.s"
@@ -292,6 +331,9 @@ help:
 	@echo "... sgemm03_shared_memory.o"
 	@echo "... sgemm03_shared_memory.i"
 	@echo "... sgemm03_shared_memory.s"
+	@echo "... sgemm04_per_thread_work.o"
+	@echo "... sgemm04_per_thread_work.i"
+	@echo "... sgemm04_per_thread_work.s"
 .PHONY : help
 
 

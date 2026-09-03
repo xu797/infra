@@ -70,4 +70,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "sgemm/CMakeFiles/sgemm01_baseline.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm02_shared_memory.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm03_shared_memory.dir/DependInfo.cmake"
+  "sgemm/CMakeFiles/sgemm04_per_thread_work.dir/DependInfo.cmake"
   )
