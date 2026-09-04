@@ -186,6 +186,20 @@ sgemm04_per_thread_work/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build
 .PHONY : sgemm04_per_thread_work/fast
 
+# Convenience name for target.
+sgemm/CMakeFiles/sgemm05_float4.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm05_float4.dir/rule
+.PHONY : sgemm/CMakeFiles/sgemm05_float4.dir/rule
+
+# Convenience name for target.
+sgemm05_float4: sgemm/CMakeFiles/sgemm05_float4.dir/rule
+.PHONY : sgemm05_float4
+
+# fast build rule for target.
+sgemm05_float4/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/build
+.PHONY : sgemm05_float4/fast
+
 hello_sgemm.o: hello_sgemm.cu.o
 .PHONY : hello_sgemm.o
 
@@ -306,6 +320,30 @@ sgemm04_per_thread_work.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/sgemm04_per_thread_work.cu.s
 .PHONY : sgemm04_per_thread_work.cu.s
 
+sgemm05_float4.o: sgemm05_float4.cu.o
+.PHONY : sgemm05_float4.o
+
+# target to build an object file
+sgemm05_float4.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/sgemm05_float4.cu.o
+.PHONY : sgemm05_float4.cu.o
+
+sgemm05_float4.i: sgemm05_float4.cu.i
+.PHONY : sgemm05_float4.i
+
+# target to preprocess a source file
+sgemm05_float4.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/sgemm05_float4.cu.i
+.PHONY : sgemm05_float4.cu.i
+
+sgemm05_float4.s: sgemm05_float4.cu.s
+.PHONY : sgemm05_float4.s
+
+# target to generate assembly for a file
+sgemm05_float4.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/sgemm05_float4.cu.s
+.PHONY : sgemm05_float4.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -319,6 +357,7 @@ help:
 	@echo "... sgemm02_shared_memory"
 	@echo "... sgemm03_shared_memory"
 	@echo "... sgemm04_per_thread_work"
+	@echo "... sgemm05_float4"
 	@echo "... hello_sgemm.o"
 	@echo "... hello_sgemm.i"
 	@echo "... hello_sgemm.s"
@@ -334,6 +373,9 @@ help:
 	@echo "... sgemm04_per_thread_work.o"
 	@echo "... sgemm04_per_thread_work.i"
 	@echo "... sgemm04_per_thread_work.s"
+	@echo "... sgemm05_float4.o"
+	@echo "... sgemm05_float4.i"
+	@echo "... sgemm05_float4.s"
 .PHONY : help
 
 

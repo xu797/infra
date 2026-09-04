@@ -115,6 +115,7 @@ sgemm/all: sgemm/CMakeFiles/sgemm01_baseline.dir/all
 sgemm/all: sgemm/CMakeFiles/sgemm02_shared_memory.dir/all
 sgemm/all: sgemm/CMakeFiles/sgemm03_shared_memory.dir/all
 sgemm/all: sgemm/CMakeFiles/sgemm04_per_thread_work.dir/all
+sgemm/all: sgemm/CMakeFiles/sgemm05_float4.dir/all
 .PHONY : sgemm/all
 
 # Recursive "preinstall" directory target.
@@ -127,6 +128,7 @@ sgemm/clean: sgemm/CMakeFiles/sgemm01_baseline.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm02_shared_memory.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm03_shared_memory.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm04_per_thread_work.dir/clean
+sgemm/clean: sgemm/CMakeFiles/sgemm05_float4.dir/clean
 .PHONY : sgemm/clean
 
 #=============================================================================
@@ -466,6 +468,32 @@ sgemm04_per_thread_work: sgemm/CMakeFiles/sgemm04_per_thread_work.dir/rule
 sgemm/CMakeFiles/sgemm04_per_thread_work.dir/clean:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/clean
 .PHONY : sgemm/CMakeFiles/sgemm04_per_thread_work.dir/clean
+
+#=============================================================================
+# Target rules for target sgemm/CMakeFiles/sgemm05_float4.dir
+
+# All Build rule for target.
+sgemm/CMakeFiles/sgemm05_float4.dir/all:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/depend
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=27,28 "Built target sgemm05_float4"
+.PHONY : sgemm/CMakeFiles/sgemm05_float4.dir/all
+
+# Build rule for subdir invocation for target.
+sgemm/CMakeFiles/sgemm05_float4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm05_float4.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : sgemm/CMakeFiles/sgemm05_float4.dir/rule
+
+# Convenience name for target.
+sgemm05_float4: sgemm/CMakeFiles/sgemm05_float4.dir/rule
+.PHONY : sgemm05_float4
+
+# clean rule for target.
+sgemm/CMakeFiles/sgemm05_float4.dir/clean:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/clean
+.PHONY : sgemm/CMakeFiles/sgemm05_float4.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

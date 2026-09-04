@@ -285,6 +285,19 @@ sgemm04_per_thread_work/fast:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build.make sgemm/CMakeFiles/sgemm04_per_thread_work.dir/build
 .PHONY : sgemm04_per_thread_work/fast
 
+#=============================================================================
+# Target rules for targets named sgemm05_float4
+
+# Build rule for target.
+sgemm05_float4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm05_float4
+.PHONY : sgemm05_float4
+
+# fast build rule for target.
+sgemm05_float4/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm05_float4.dir/build.make sgemm/CMakeFiles/sgemm05_float4.dir/build
+.PHONY : sgemm05_float4/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,6 +319,7 @@ help:
 	@echo "... sgemm02_shared_memory"
 	@echo "... sgemm03_shared_memory"
 	@echo "... sgemm04_per_thread_work"
+	@echo "... sgemm05_float4"
 .PHONY : help
 
 
