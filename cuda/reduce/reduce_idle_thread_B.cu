@@ -7,12 +7,13 @@
 
 __global__ void reduce(int *input, int *output)
 {   
-    __shared__ int shared[THREAD_PER_BLOCK];
+    __shared__ int shared[THREAD_PER_BLOCK / 2];
 
-    int *input_begin = input + blockIdx.x * blockDim.x;
+    int *input_begin = input + blockIdx.x * blockDim.x * 2;
 
     // 要等一个block里面的所有thread完成共享内存搬运之后才往下走
-    shared[threadIdx.x] = input_begin[threadIdx.x];
+    //plan B: thread减半 block数量不变
+    shared[threadIdx.x] = input_begin[threadIdx.x] + input_begin[threadIdx.x + blockDim.x];
     __syncthreads();
 
     for(int i = blockDim.x / 2; i > 0; i /= 2)
@@ -79,14 +80,12 @@ int main()
     cudaMemcpy(gpu_input, cpu_input, N * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemset(gpu_output, 0, BLOCK_NUM * sizeof(int));
 
-    reduce<<<BLOCK_NUM, THREAD_PER_BLOCK>>>(gpu_input, gpu_output);
+    reduce<<<BLOCK_NUM, THREAD_PER_BLOCK / 2>>>(gpu_input, gpu_output);
 
     cudaError_t err = cudaGetLastError();
     if(err != cudaSuccess){
         printf("Kernel error: %s\n", cudaGetErrorString(err));
     }
-    //wait gpureslut...
-    cudaDeviceSynchronize();
 
     int *res = new int[BLOCK_NUM];
     cudaMemcpy(res, gpu_output, BLOCK_NUM * sizeof(int), cudaMemcpyDeviceToHost);

@@ -7,15 +7,16 @@
 
 __global__ void reduce(int *input, int *output)
 {   
-    __shared__ int shared[THREAD_PER_BLOCK];
+    volatile __shared__ int shared[THREAD_PER_BLOCK];
 
-    int *input_begin = input + blockIdx.x * blockDim.x;
+    int *input_begin = input + blockIdx.x * blockDim.x * 2;
 
     // 要等一个block里面的所有thread完成共享内存搬运之后才往下走
-    shared[threadIdx.x] = input_begin[threadIdx.x];
+    //Plan A:直接把blcok减半，搬运到shared_memory的时候不是全部搬过来，搬的时候就做一次加法。
+    shared[threadIdx.x] = input_begin[threadIdx.x] + input_begin[threadIdx.x + blockDim.x];
     __syncthreads();
 
-    for(int i = blockDim.x / 2; i > 0; i /= 2)
+    for(int i = blockDim.x / 2; i > 32; i /= 2)
     {
         if(threadIdx.x < i)
         {
@@ -24,6 +25,15 @@ __global__ void reduce(int *input, int *output)
         __syncthreads(); //block里面所有thread执行完之后才能往下走.
     }
 
+    if(threadIdx.x < 32)
+    {
+        shared[threadIdx.x]+=shared[threadIdx.x+32];
+        shared[threadIdx.x]+=shared[threadIdx.x+16];
+        shared[threadIdx.x]+=shared[threadIdx.x+8];
+        shared[threadIdx.x]+=shared[threadIdx.x+4];
+        shared[threadIdx.x]+=shared[threadIdx.x+2];
+        shared[threadIdx.x]+=shared[threadIdx.x+1];
+    }
 
     if(threadIdx.x == 0)
     {
@@ -46,7 +56,7 @@ bool check(int *arr, int *brr, int n)
 int main()
 {   
     int N = 3 * 1024 * 1024;
-    int BLOCK_NUM = (N + 255) / THREAD_PER_BLOCK;
+    int BLOCK_NUM = (N + 255) / THREAD_PER_BLOCK / 2;
     int *cpu_input = new int[N];
     int *cpu_output = new int[BLOCK_NUM];
 
@@ -64,9 +74,9 @@ int main()
     // cpu_output
     for(int i = 0; i < BLOCK_NUM; ++i)
     {
-        for(int j = 0; j < THREAD_PER_BLOCK; ++j)
+        for(int j = 0; j < 2 * THREAD_PER_BLOCK; ++j)
         {
-            cpu_output[i] += cpu_input[j + i * THREAD_PER_BLOCK];
+            cpu_output[i] += cpu_input[j + i * 2 * THREAD_PER_BLOCK];
         }
     }
 
@@ -85,8 +95,6 @@ int main()
     if(err != cudaSuccess){
         printf("Kernel error: %s\n", cudaGetErrorString(err));
     }
-    //wait gpureslut...
-    cudaDeviceSynchronize();
 
     int *res = new int[BLOCK_NUM];
     cudaMemcpy(res, gpu_output, BLOCK_NUM * sizeof(int), cudaMemcpyDeviceToHost);
