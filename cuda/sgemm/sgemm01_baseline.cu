@@ -73,8 +73,8 @@ int main()
     A_matrix:M*K, B_matrix:K*N, C_matrix:M*N
     */
     const int M = 512;
-    const int K = 512;
-    const int N = 512;
+    const int K = 256;
+    const int N = 1024;
 
     //cpu malloc...
     float *cpuA_matrix = new float[M * K]();
