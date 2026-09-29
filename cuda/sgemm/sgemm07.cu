@@ -34,10 +34,10 @@ __global__ void sgemm(float *A_matrix, float *B_matrix, float *C_matrix, const i
         // FETCH_FLOAT4(B_matrix_shared[ty][tx * NUM_PER_THREAD]) = FETCH_FLOAT4(B_matrix_begin[(ty + i) * N + tx * NUM_PER_THREAD]);
         }
 
-        for(int s = 0; s < M_NUM_PER_THREAD; ++s)
+        for(int s = 0; s < K_NUM_PER_THREAD; ++s)
         {
             // FETCH_FLOAT4(A_matrix_shared[ty * M_NUM_PER_THREAD + s][tx * NUM_PER_THREAD]) = FETCH_FLOAT4(A_matrix_begin[K * ty + i + tx * NUM_PER_THREAD]);
-            FETCH_FLOAT4(B_matrix_shared[ty * M_NUM_PER_THREAD + s][tx * M_NUM_PER_THREAD]) = FETCH_FLOAT4(B_matrix_begin[(ty * M_NUM_PER_THREAD + s + i) * N + tx * M_NUM_PER_THREAD]);
+            FETCH_FLOAT4(B_matrix_shared[ty * K_NUM_PER_THREAD + s][tx * N_NUM_PER_THREAD]) = FETCH_FLOAT4(B_matrix_begin[(ty * K_NUM_PER_THREAD + s + i) * N + tx * N_NUM_PER_THREAD]);
         }
 
         __syncthreads();
@@ -51,10 +51,12 @@ __global__ void sgemm(float *A_matrix, float *B_matrix, float *C_matrix, const i
             a_reg[2] = A_matrix_shared[ty * M_NUM_PER_THREAD + 2][k];
             a_reg[3] = A_matrix_shared[ty * M_NUM_PER_THREAD + 3][k];
 
-            b_reg[0] = B_matrix_shared[k][tx * N_NUM_PER_THREAD];
-            b_reg[1] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 1];
-            b_reg[2] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 2];
-            b_reg[3] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 3];
+            // b_reg[0] = B_matrix_shared[k][tx * N_NUM_PER_THREAD];
+            // b_reg[1] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 1];
+            // b_reg[2] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 2];
+            // b_reg[3] = B_matrix_shared[k][tx * N_NUM_PER_THREAD + 3];
+            FETCH_FLOAT4(b_reg[0]) = FETCH_FLOAT4(B_matrix_shared[k][tx * N_NUM_PER_THREAD]);
+
 
             for(int p = 0; p < M_NUM_PER_THREAD; ++p)
             {
@@ -71,10 +73,12 @@ __global__ void sgemm(float *A_matrix, float *B_matrix, float *C_matrix, const i
 
     for(int i = 0; i < M_NUM_PER_THREAD; ++i)
     {
-        for(int j = 0; j < N_NUM_PER_THREAD; ++j)
-        {
-            C_matrix_begin[N * (ty * M_NUM_PER_THREAD + i) + tx * N_NUM_PER_THREAD + j] = temp[i][j];
-        }
+        // for(int j = 0; j < N_NUM_PER_THREAD; ++j)
+        // {
+        //     C_matrix_begin[N * (ty * M_NUM_PER_THREAD + i) + tx * N_NUM_PER_THREAD + j] = temp[i][j];
+        // }
+        FETCH_FLOAT4(C_matrix_begin[N * (ty * M_NUM_PER_THREAD + i) + tx * N_NUM_PER_THREAD]) = FETCH_FLOAT4(temp[i][0]);
+            
     }
 
 }
