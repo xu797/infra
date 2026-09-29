@@ -214,6 +214,20 @@ sgemm06_register_outer_product/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm06_register_outer_product.dir/build.make sgemm/CMakeFiles/sgemm06_register_outer_product.dir/build
 .PHONY : sgemm06_register_outer_product/fast
 
+# Convenience name for target.
+sgemm/CMakeFiles/sgemm07.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm07.dir/rule
+.PHONY : sgemm/CMakeFiles/sgemm07.dir/rule
+
+# Convenience name for target.
+sgemm07: sgemm/CMakeFiles/sgemm07.dir/rule
+.PHONY : sgemm07
+
+# fast build rule for target.
+sgemm07/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/build
+.PHONY : sgemm07/fast
+
 hello_sgemm.o: hello_sgemm.cu.o
 .PHONY : hello_sgemm.o
 
@@ -382,6 +396,30 @@ sgemm06_register_outer_product.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm06_register_outer_product.dir/build.make sgemm/CMakeFiles/sgemm06_register_outer_product.dir/sgemm06_register_outer_product.cu.s
 .PHONY : sgemm06_register_outer_product.cu.s
 
+sgemm07.o: sgemm07.cu.o
+.PHONY : sgemm07.o
+
+# target to build an object file
+sgemm07.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/sgemm07.cu.o
+.PHONY : sgemm07.cu.o
+
+sgemm07.i: sgemm07.cu.i
+.PHONY : sgemm07.i
+
+# target to preprocess a source file
+sgemm07.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/sgemm07.cu.i
+.PHONY : sgemm07.cu.i
+
+sgemm07.s: sgemm07.cu.s
+.PHONY : sgemm07.s
+
+# target to generate assembly for a file
+sgemm07.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/sgemm07.cu.s
+.PHONY : sgemm07.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -397,6 +435,7 @@ help:
 	@echo "... sgemm04_per_thread_work"
 	@echo "... sgemm05_float4"
 	@echo "... sgemm06_register_outer_product"
+	@echo "... sgemm07"
 	@echo "... hello_sgemm.o"
 	@echo "... hello_sgemm.i"
 	@echo "... hello_sgemm.s"
@@ -418,6 +457,9 @@ help:
 	@echo "... sgemm06_register_outer_product.o"
 	@echo "... sgemm06_register_outer_product.i"
 	@echo "... sgemm06_register_outer_product.s"
+	@echo "... sgemm07.o"
+	@echo "... sgemm07.i"
+	@echo "... sgemm07.s"
 .PHONY : help
 
 

@@ -20,3 +20,6 @@ target_link_libraries(sgemm05_float4 PRIVATE CUDA::cudart)
 
 add_executable(sgemm06_register_outer_product sgemm06_register_outer_product.cu)
 target_link_libraries(sgemm06_register_outer_product PRIVATE CUDA::cudart)
+
+add_executable(sgemm07 sgemm07.cu)
+target_link_libraries(sgemm07 PRIVATE CUDA::cudart)

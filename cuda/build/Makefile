@@ -311,6 +311,19 @@ sgemm06_register_outer_product/fast:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm06_register_outer_product.dir/build.make sgemm/CMakeFiles/sgemm06_register_outer_product.dir/build
 .PHONY : sgemm06_register_outer_product/fast
 
+#=============================================================================
+# Target rules for targets named sgemm07
+
+# Build rule for target.
+sgemm07: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm07
+.PHONY : sgemm07
+
+# fast build rule for target.
+sgemm07/fast:
+	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/build
+.PHONY : sgemm07/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +347,7 @@ help:
 	@echo "... sgemm04_per_thread_work"
 	@echo "... sgemm05_float4"
 	@echo "... sgemm06_register_outer_product"
+	@echo "... sgemm07"
 .PHONY : help
 
 
