@@ -21,3 +21,6 @@
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm08.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/edit_cache.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/rebuild_cache.dir
+/home/xu/work/infra/cuda/build/softmax/CMakeFiles/softmax_v1.dir
+/home/xu/work/infra/cuda/build/softmax/CMakeFiles/edit_cache.dir
+/home/xu/work/infra/cuda/build/softmax/CMakeFiles/rebuild_cache.dir

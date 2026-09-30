@@ -337,6 +337,19 @@ sgemm08/fast:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/build
 .PHONY : sgemm08/fast
 
+#=============================================================================
+# Target rules for targets named softmax_v1
+
+# Build rule for target.
+softmax_v1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 softmax_v1
+.PHONY : softmax_v1
+
+# fast build rule for target.
+softmax_v1/fast:
+	$(MAKE) $(MAKESILENT) -f softmax/CMakeFiles/softmax_v1.dir/build.make softmax/CMakeFiles/softmax_v1.dir/build
+.PHONY : softmax_v1/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -362,6 +375,7 @@ help:
 	@echo "... sgemm06_register_outer_product"
 	@echo "... sgemm07"
 	@echo "... sgemm08"
+	@echo "... softmax_v1"
 .PHONY : help
 
 

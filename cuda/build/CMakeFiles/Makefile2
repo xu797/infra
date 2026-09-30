@@ -65,16 +65,19 @@ CMAKE_BINARY_DIR = /home/xu/work/infra/cuda/build
 # The main recursive "all" target.
 all: reduce/all
 all: sgemm/all
+all: softmax/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: reduce/preinstall
 preinstall: sgemm/preinstall
+preinstall: softmax/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: reduce/clean
 clean: sgemm/clean
+clean: softmax/clean
 .PHONY : clean
 
 #=============================================================================
@@ -136,6 +139,21 @@ sgemm/clean: sgemm/CMakeFiles/sgemm06_register_outer_product.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm07.dir/clean
 sgemm/clean: sgemm/CMakeFiles/sgemm08.dir/clean
 .PHONY : sgemm/clean
+
+#=============================================================================
+# Directory level rules for directory softmax
+
+# Recursive "all" directory target.
+softmax/all: softmax/CMakeFiles/softmax_v1.dir/all
+.PHONY : softmax/all
+
+# Recursive "preinstall" directory target.
+softmax/preinstall:
+.PHONY : softmax/preinstall
+
+# Recursive "clean" directory target.
+softmax/clean: softmax/CMakeFiles/softmax_v1.dir/clean
+.PHONY : softmax/clean
 
 #=============================================================================
 # Target rules for target reduce/CMakeFiles/reduce_shared_memory.dir
@@ -578,6 +596,32 @@ sgemm08: sgemm/CMakeFiles/sgemm08.dir/rule
 sgemm/CMakeFiles/sgemm08.dir/clean:
 	$(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/clean
 .PHONY : sgemm/CMakeFiles/sgemm08.dir/clean
+
+#=============================================================================
+# Target rules for target softmax/CMakeFiles/softmax_v1.dir
+
+# All Build rule for target.
+softmax/CMakeFiles/softmax_v1.dir/all:
+	$(MAKE) $(MAKESILENT) -f softmax/CMakeFiles/softmax_v1.dir/build.make softmax/CMakeFiles/softmax_v1.dir/depend
+	$(MAKE) $(MAKESILENT) -f softmax/CMakeFiles/softmax_v1.dir/build.make softmax/CMakeFiles/softmax_v1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/work/infra/cuda/build/CMakeFiles --progress-num=35,36 "Built target softmax_v1"
+.PHONY : softmax/CMakeFiles/softmax_v1.dir/all
+
+# Build rule for subdir invocation for target.
+softmax/CMakeFiles/softmax_v1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 softmax/CMakeFiles/softmax_v1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/work/infra/cuda/build/CMakeFiles 0
+.PHONY : softmax/CMakeFiles/softmax_v1.dir/rule
+
+# Convenience name for target.
+softmax_v1: softmax/CMakeFiles/softmax_v1.dir/rule
+.PHONY : softmax_v1
+
+# clean rule for target.
+softmax/CMakeFiles/softmax_v1.dir/clean:
+	$(MAKE) $(MAKESILENT) -f softmax/CMakeFiles/softmax_v1.dir/build.make softmax/CMakeFiles/softmax_v1.dir/clean
+.PHONY : softmax/CMakeFiles/softmax_v1.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

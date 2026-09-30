@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "../reduce/CMakeLists.txt"
   "../sgemm/CMakeLists.txt"
+  "../softmax/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCUDAInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
@@ -54,6 +55,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "reduce/CMakeFiles/CMakeDirectoryInformation.cmake"
   "sgemm/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "softmax/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -75,4 +77,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "sgemm/CMakeFiles/sgemm06_register_outer_product.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm07.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm08.dir/DependInfo.cmake"
+  "softmax/CMakeFiles/softmax_v1.dir/DependInfo.cmake"
   )
