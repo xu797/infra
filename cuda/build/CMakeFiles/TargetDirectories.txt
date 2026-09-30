@@ -18,5 +18,6 @@
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm05_float4.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm06_register_outer_product.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm07.dir
+/home/xu/work/infra/cuda/build/sgemm/CMakeFiles/sgemm08.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/edit_cache.dir
 /home/xu/work/infra/cuda/build/sgemm/CMakeFiles/rebuild_cache.dir

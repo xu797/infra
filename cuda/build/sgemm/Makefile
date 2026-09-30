@@ -228,6 +228,20 @@ sgemm07/fast:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/build
 .PHONY : sgemm07/fast
 
+# Convenience name for target.
+sgemm/CMakeFiles/sgemm08.dir/rule:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sgemm/CMakeFiles/sgemm08.dir/rule
+.PHONY : sgemm/CMakeFiles/sgemm08.dir/rule
+
+# Convenience name for target.
+sgemm08: sgemm/CMakeFiles/sgemm08.dir/rule
+.PHONY : sgemm08
+
+# fast build rule for target.
+sgemm08/fast:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/build
+.PHONY : sgemm08/fast
+
 hello_sgemm.o: hello_sgemm.cu.o
 .PHONY : hello_sgemm.o
 
@@ -420,6 +434,30 @@ sgemm07.cu.s:
 	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm07.dir/build.make sgemm/CMakeFiles/sgemm07.dir/sgemm07.cu.s
 .PHONY : sgemm07.cu.s
 
+sgemm08.o: sgemm08.cu.o
+.PHONY : sgemm08.o
+
+# target to build an object file
+sgemm08.cu.o:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/sgemm08.cu.o
+.PHONY : sgemm08.cu.o
+
+sgemm08.i: sgemm08.cu.i
+.PHONY : sgemm08.i
+
+# target to preprocess a source file
+sgemm08.cu.i:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/sgemm08.cu.i
+.PHONY : sgemm08.cu.i
+
+sgemm08.s: sgemm08.cu.s
+.PHONY : sgemm08.s
+
+# target to generate assembly for a file
+sgemm08.cu.s:
+	cd /home/xu/work/infra/cuda/build && $(MAKE) $(MAKESILENT) -f sgemm/CMakeFiles/sgemm08.dir/build.make sgemm/CMakeFiles/sgemm08.dir/sgemm08.cu.s
+.PHONY : sgemm08.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -436,6 +474,7 @@ help:
 	@echo "... sgemm05_float4"
 	@echo "... sgemm06_register_outer_product"
 	@echo "... sgemm07"
+	@echo "... sgemm08"
 	@echo "... hello_sgemm.o"
 	@echo "... hello_sgemm.i"
 	@echo "... hello_sgemm.s"
@@ -460,6 +499,9 @@ help:
 	@echo "... sgemm07.o"
 	@echo "... sgemm07.i"
 	@echo "... sgemm07.s"
+	@echo "... sgemm08.o"
+	@echo "... sgemm08.i"
+	@echo "... sgemm08.s"
 .PHONY : help
 
 

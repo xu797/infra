@@ -74,4 +74,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "sgemm/CMakeFiles/sgemm05_float4.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm06_register_outer_product.dir/DependInfo.cmake"
   "sgemm/CMakeFiles/sgemm07.dir/DependInfo.cmake"
+  "sgemm/CMakeFiles/sgemm08.dir/DependInfo.cmake"
   )
