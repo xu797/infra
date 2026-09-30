@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 #include<cuda_runtime.h>
 
 __global__ void softmax(float *input, float *output, int M, int N)
@@ -53,7 +54,7 @@ void softmax_cpu(float *input, float *output, int M, int N)
         //write output
         for(int j = 0; j < N; ++j)
         {
-            output[i * N + j] = input[i * N + j] / sum;
+            output[i * N + j] = std::exp(input[i * N + j] - max_value) / sum;
         }
     }
 }
@@ -74,12 +75,33 @@ void check(float *res1, float *res2, int M, int N)
     std::cout << "the result is right..." << std::endl;
 }
 
+void view_result(float *res_cpu, float *res_gpu)
+{
+    std::cout << "cpu_result..." << std::endl;
+    for(int i = 0; i < 10; ++i)
+    {
+        std::cout << res_cpu[i] << std::endl;
+    }
+
+    std::cout << "gpu_result..." << std::endl;
+    for(int i = 0; i < 10; ++i)
+    {
+        std::cout << res_gpu[i] << std::endl;
+    }
+}
+
 int main()
 {
     const int M = 512;
     const int N = 1024;
     float *input_cpu = new float[M * N]();
     float *output_cpu = new float[M * N]();
+
+    for(int i = 0; i < M * N; i++)
+    {
+        input_cpu[i] = rand() * 1.0f / RAND_MAX;
+    }
+
     softmax_cpu(input_cpu, output_cpu, M, N);
 
     float *input_gpu;
@@ -108,5 +130,5 @@ int main()
 
     check(res, output_cpu, M, N);
 
-
+    view_result(output_cpu, res);
 }
