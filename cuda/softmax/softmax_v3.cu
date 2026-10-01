@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include <iomanip>
 #include<cuda_runtime.h>
 
 __device__ void warpReduceOnline(float &max_value, float &sum)
@@ -28,7 +29,7 @@ __device__ void warpReduceOnline(float &max_value, float &sum)
 
 __global__ void softmax(float *input, float *output, int M, int N)
 {   
-    //1个block负责一行
+    //1个block负责一行,一个thread一次度float4
     int index = blockIdx.x * N;
     int tid = threadIdx.x;
 
@@ -38,13 +39,34 @@ __global__ void softmax(float *input, float *output, int M, int N)
     float *input_begin = input + index;
     float *output_begin = output + index;
 
+    //input_begin_f4[0] = {input_begin[0], input_begin[1], input_begin[2], input_begin[3],}
+    float4 *input_begin_f4 = reinterpret_cast<float4*>(input_begin); //size: N4或者N4 + 1
+    float4 *output_begin_f4 = reinterpret_cast<float4*>(output_begin); 
+    int N4 = N / 4;
+
     float local_pre_max = -INFINITY;
     float local_max;
     float local_sum = 0.0f;
 
-    for(int i = tid; i < N; i += blockDim.x)
+    for(int i = tid; i < N4; i += blockDim.x)
     {
-        local_max = fmaxf(input_begin[i], local_pre_max);
+        // local_max = fmaxf(input[i], local_pre_max);
+        // local_sum = local_sum * expf(local_pre_max - local_max) + expf(input[i] - local_max);
+        // local_pre_max = local_max;
+        float4 data = input_begin_f4[i];
+        float vals[4] = {data.x, data.y, data.z, data.w};
+        for(int j = 0; j < 4; ++j)
+        {
+            local_max = fmaxf(local_pre_max, vals[j]);
+            local_sum = local_sum * expf(local_pre_max - local_max) + expf(vals[j] - local_max);
+            local_pre_max = local_max;
+        }
+    }
+
+    //当N不是4的整数倍的时候，末尾还有几个数据需要单独处理
+    for(int i = tid + N4 * 4; i < N; i += blockDim.x)
+    {
+        local_max = fmaxf(local_pre_max, input_begin[i]);
         local_sum = local_sum * expf(local_pre_max - local_max) + expf(input_begin[i] - local_max);
         local_pre_max = local_max;
     }
@@ -91,11 +113,22 @@ __global__ void softmax(float *input, float *output, int M, int N)
     float max_value = final_max;
     float inv_sum = 1.0f / final_sum;
     
-    for(int i = tid; i < N ; i += blockDim.x)
+    for(int i = tid; i < N4 ; i += blockDim.x)
+    {
+        // output_begin[i] = expf(input_begin[i] - max_value) * inv_sum;
+        float4 data = input_begin_f4[i];
+        float4 result;
+        result.x = expf(data.x - max_value) * inv_sum;
+        result.y = expf(data.y - max_value) * inv_sum;
+        result.z = expf(data.z - max_value) * inv_sum;
+        result.w = expf(data.w - max_value) * inv_sum;
+        output_begin_f4[i] = result;
+    }
+
+    for(int i = tid + N4 * 4; i < N; ++i)
     {
         output_begin[i] = expf(input_begin[i] - max_value) * inv_sum;
     }
-
 }
 
 void softmax_cpu(float *input, float *output, int M, int N)
@@ -143,16 +176,22 @@ bool check(float *res1, float *res2, int M, int N)
 
 void view_result(float *res_cpu, float *res_gpu)
 {
-    std::cout << "cpu_result..." << std::endl;
-    for(int i = 0; i < 10; ++i)
-    {
-        std::cout << res_cpu[i] << std::endl;
-    }
+    // std::cout << "left: cpu_result, right: gpu_result" << std::endl;
+    // for(int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << res_cpu[i] << "    " << res_gpu[i] << std::endl;
+    // }
+    std::cout << std::fixed << std::setprecision(8);
+    std::cout << std::left
+              << std::setw(18) << "left: cpu_result"
+              << std::setw(18) << "right: gpu_result"
+              << std::endl;
 
-    std::cout << "gpu_result..." << std::endl;
-    for(int i = 0; i < 10; ++i)
+    for(int i = 0; i < 20; ++i)
     {
-        std::cout << res_gpu[i] << std::endl;
+        std::cout << std::setw(18) << res_cpu[i]
+                  << std::setw(18) << res_gpu[i]
+                  << std::endl;
     }
 }
 

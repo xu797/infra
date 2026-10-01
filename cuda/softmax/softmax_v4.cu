@@ -1,6 +1,9 @@
 #include<iostream>
 #include<cmath>
+#include <iomanip>
 #include<cuda_runtime.h>
+
+#define MAX_ELEMS_PER_THREAD 32
 
 __device__ void warpReduceOnline(float &max_value, float &sum)
 {   
@@ -42,8 +45,14 @@ __global__ void softmax(float *input, float *output, int M, int N)
     float local_max;
     float local_sum = 0.0f;
 
+    float reg_cache[MAX_ELEMS_PER_THREAD];
+    int count = 0;
+
     for(int i = tid; i < N; i += blockDim.x)
-    {
+    {   
+        reg_cache[count] = input_begin[i];
+        count++;
+
         local_max = fmaxf(input_begin[i], local_pre_max);
         local_sum = local_sum * expf(local_pre_max - local_max) + expf(input_begin[i] - local_max);
         local_pre_max = local_max;
@@ -91,9 +100,11 @@ __global__ void softmax(float *input, float *output, int M, int N)
     float max_value = final_max;
     float inv_sum = 1.0f / final_sum;
     
+    count = 0;
     for(int i = tid; i < N ; i += blockDim.x)
     {
-        output_begin[i] = expf(input_begin[i] - max_value) * inv_sum;
+        output_begin[i] = expf(reg_cache[count] - max_value) * inv_sum;
+        count++;
     }
 
 }
@@ -141,18 +152,24 @@ bool check(float *res1, float *res2, int M, int N)
     return true;
 }
 
-void view_result(float *res_cpu, float *res_gpu)
+void view_result(float *res_cpu, float *res_gpu, int M, int N)
 {
-    std::cout << "cpu_result..." << std::endl;
-    for(int i = 0; i < 10; ++i)
-    {
-        std::cout << res_cpu[i] << std::endl;
-    }
+    // std::cout << "left: cpu_result, right: gpu_result" << std::endl;
+    // for(int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << res_cpu[i] << "    " << res_gpu[i] << std::endl;
+    // }
+    std::cout << std::fixed << std::setprecision(8);
+    std::cout << std::left
+              << std::setw(18) << "left: cpu_result"
+              << std::setw(18) << "right: gpu_result"
+              << std::endl;
 
-    std::cout << "gpu_result..." << std::endl;
-    for(int i = 0; i < 10; ++i)
+    for(int i = 0; i < M; ++i)
     {
-        std::cout << res_gpu[i] << std::endl;
+        std::cout << std::setw(18) << res_cpu[i * N]
+                  << std::setw(18) << res_gpu[i * N]
+                  << std::endl;
     }
 }
 
@@ -195,6 +212,8 @@ int main()
     float *res = new float[M * N]();
     cudaMemcpy(res, output_gpu, sizeof(float) * M * N, cudaMemcpyDeviceToHost);
 
+    view_result(output_cpu, res, M, N);
+
     if(check(res, output_cpu, M, N))
     {
         std::cout << "the result is right..." << std::endl;
@@ -204,5 +223,4 @@ int main()
         std::cout << "the result is error..." << std::endl;
     }
 
-    view_result(output_cpu, res);
 }
