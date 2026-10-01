@@ -12,4 +12,7 @@ target_link_libraries(softmax_v3 PRIVATE CUDA::cudart)
 add_executable(softmax_v4 softmax_v4.cu)
 target_link_libraries(softmax_v4 PRIVATE CUDA::cudart)
 
+add_executable(softmax_v5 softmax_v5.cu)
+target_link_libraries(softmax_v5 PRIVATE CUDA::cudart)
+
 
