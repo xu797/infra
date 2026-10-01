@@ -131,4 +131,11 @@ int main()
     check(res, output_cpu, M, N);
 
     view_result(output_cpu, res);
+
+    delete []input_cpu;
+    delete []output_cpu;
+    delete []res;
+
+    cudaFree(input_gpu);
+    cudaFree(output_gpu);
 }

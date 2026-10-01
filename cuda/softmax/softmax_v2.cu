@@ -205,4 +205,10 @@ int main()
     }
 
     view_result(output_cpu, res);
+    delete []input_cpu;
+    delete []output_cpu;
+    delete []res;
+
+    cudaFree(input_gpu);
+    cudaFree(output_gpu);
 }

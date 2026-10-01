@@ -4,4 +4,4 @@ project(cuda LANGUAGES C CXX CUDA)
 add_subdirectory(reduce)
 add_subdirectory(sgemm)
 add_subdirectory(softmax)
-
+add_subdirectory(flash_attention)
